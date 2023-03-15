@@ -1,6 +1,6 @@
 # blue-green-cicd-architecture
 
-Complete deployment process with CI/CD automation including blue/green deployment policy
+CI/CD with blue-green deployment is a strategy for deploying applications in a way that minimizes downtime and risk. It involves maintaining two identical environments, one "blue" and one "green", with only one of them live at any given time.
 
 ## What is CI/CD?
 
@@ -22,7 +22,17 @@ In continuous testing, various types of tests are performed within the CI/CD pip
 
 CI/CD tools can help a team automate their development, deployment, and testing. Some tools specifically handle the integration (CI) side, some manage development and deployment (CD), while others specialize in continuous testing or related functions.
 
-One of the best known open source tools for CI/CD is the automation server Jenkins.
+Here are some popular CI/CD tools to consider:
+
+**Jenkins:** Jenkins is one of the most widely used CI/CD tools, and it is open-source and free. It provides a vast number of plugins to support various platforms and technologies.
+
+**CircleCI:** CircleCI is a cloud-based CI/CD tool that can be used to automate builds, tests, and deployments. It offers a simple user interface and easy configuration for building and testing your projects.
+
+**GitLab CI/CD:** GitLab CI/CD is a complete DevOps platform that provides a built-in CI/CD pipeline. It can be used to build, test, and deploy code automatically.
+
+**Travis CI:** Travis CI is a cloud-based CI/CD tool that can be used to build and test code on multiple platforms. It integrates well with GitHub, making it an ideal choice for open-source projects.
+
+One of the best known open source tools for CI/CD is the automation server **Jenkins** .But **GitLab CI/CD** is a powerful and flexible tool that offers many benefits, especially if you're already using GitLab for version control.
 
 ## What is a blue-green deployment?
 
@@ -70,3 +80,17 @@ There are several other database change scenarios detailed in the list below. Fo
 - **Adding a new view/stored procedure:** Very similar to adding a new column. The updated code will use the new view/stored procedure; the old code will not use the view/stored procedure.
 - **Updating an existing view/stored procedure:** As long as columns aren’t removed from a view, this should be fine. If columns are removed, then the process to delete columns from above should be followed.
 - **Removing a view/stored procedure:** Very similar process to removing columns. Except there won’t be data, just references in code and potentially other stored procedures.
+
+## Git Branching
+
+The most appropriate branching strategy for a team or project depends on the specific requirements and objectives of the project, the size and structure of the team, and the development methodology being used.
+
+However, there are several well-established branching policies that are commonly used by teams, including:
+
+**Gitflow:** This branching policy involves creating two long-lived branches - a "master" branch for production-ready code, and a "develop" branch for ongoing development. Feature branches are created from the "develop" branch and merged back into "develop" through pull requests.
+
+**Trunk-based Development:** This approach involves only using a single long-lived branch, the "trunk" branch, and committing all changes directly to it. This approach is best suited for small teams with a continuous deployment model.
+
+**Feature Branching:** This involves creating a branch for each feature or change, and merging them back into the main branch once they are complete. This approach works well for small teams and individual developers.
+
+**Release Branching:** This approach involves creating a separate branch for each release, allowing developers to continue working on the next release while the current one is in the testing phase. This approach works well for larger teams and projects with longer release cycles.
